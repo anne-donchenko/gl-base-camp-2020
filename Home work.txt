@@ -1,0 +1,209 @@
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ touch merge-conflict
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ vim merge-conflict
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        merge-conflict
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git add .
+warning: LF will be replaced by CRLF in merge-conflict.
+The file will have its original line endings in your working directory
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git commit -m "added new file"
+[main 499224c] added new file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 merge-conflict
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git log --oneline --decorate --graph --all
+* 499224c (HEAD -> main) added new file
+| *   98e581b (origin/process-test-20, process-test-20) Merge branch 'new-branch1' into process-test-20
+| |\
+| | * 1619859 (origin/new-branch1, new-branch1) untracked_file_Modified added
+| |/
+|/|
+| * f6859f3 README.md modified
+|/
+* aea3d94 (origin/main, origin/HEAD, new-branch) Initial commit
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git checkout process-test-20
+Switched to branch 'process-test-20'
+Your branch is up to date with 'origin/process-test-20'.
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (process-test-20)
+$ ls
+README.md  untracked_file_Modified
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (process-test-20)
+$ touch merge-conflict
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (process-test-20)
+$ vim merge-conflict
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (process-test-20)
+$ git add .
+warning: LF will be replaced by CRLF in merge-conflict.
+The file will have its original line endings in your working directory
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (process-test-20)
+$ git commit -m "Modified this file"
+[process-test-20 14ce1cd] Modified this file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 merge-conflict
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (process-test-20)
+$ git log --oneline --decorate --graph --all
+* 14ce1cd (HEAD -> process-test-20) Modified this file
+*   98e581b (origin/process-test-20) Merge branch 'new-branch1' into process-test-20
+|\
+| * 1619859 (origin/new-branch1, new-branch1) untracked_file_Modified added
+* | f6859f3 README.md modified
+|/
+| * 499224c (main) added new file
+|/
+* aea3d94 (origin/main, origin/HEAD, new-branch) Initial commit
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (process-test-20)
+$ git status
+On branch process-test-20
+Your branch is ahead of 'origin/process-test-20' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (process-test-20)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git merge process-test-20
+CONFLICT (add/add): Merge conflict in merge-conflict
+Auto-merging merge-conflict
+Automatic merge failed; fix conflicts and then commit the result.
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main|MERGING)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        modified:   README.md
+        new file:   untracked_file_Modified
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both added:      merge-conflict
+
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main|MERGING)
+$ vim merge-conflict
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main|MERGING)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        modified:   README.md
+        new file:   untracked_file_Modified
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both added:      merge-conflict
+
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main|MERGING)
+$ git add merge-conflict
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main|MERGING)
+$ git commit -m "merge-conflict resolved"
+[main b8c5f50] merge-conflict resolved
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git log --oneline --decorate --graph --all
+*   b8c5f50 (HEAD -> main) merge-conflict resolved
+|\
+| * 14ce1cd (process-test-20) Modified this file
+| *   98e581b (origin/process-test-20) Merge branch 'new-branch1' into process-test-20
+| |\
+| | * 1619859 (origin/new-branch1, new-branch1) untracked_file_Modified added
+| * | f6859f3 README.md modified
+| |/
+* / 499224c added new file
+|/
+* aea3d94 (origin/main, origin/HEAD, new-branch) Initial commit
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git push
+Enter passphrase for key '/c/Users/PROBOOK 440/.ssh/id_rsa':
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 897 bytes | 35.00 KiB/s, done.
+Total 9 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To github.com:anne-donchenko/gl-base-camp-2020.git
+   aea3d94..b8c5f50  main -> main
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git checkout process-test-20
+Switched to branch 'process-test-20'
+Your branch is ahead of 'origin/process-test-20' by 1 commit.
+  (use "git push" to publish your local commits)
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (process-test-20)
+$ git push
+Enter passphrase for key '/c/Users/PROBOOK 440/.ssh/id_rsa':
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:anne-donchenko/gl-base-camp-2020.git
+   98e581b..14ce1cd  process-test-20 -> process-test-20
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (process-test-20)
+$ git log --oneline --decorate --graph --all
+*   b8c5f50 (origin/main, origin/HEAD, main) merge-conflict resolved
+|\
+| * 14ce1cd (HEAD -> process-test-20, origin/process-test-20) Modified this file
+| *   98e581b Merge branch 'new-branch1' into process-test-20
+| |\
+| | * 1619859 (origin/new-branch1, new-branch1) untracked_file_Modified added
+| * | f6859f3 README.md modified
+| |/
+* / 499224c added new file
+|/
+* aea3d94 (new-branch) Initial commit
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (process-test-20)
+$
