@@ -1,0 +1,202 @@
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~
+$ cd Documents
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents
+$ ls
+'Continue Microsoft Word Installation.lnk'*  'Visual Studio 2019'/
+ Default.rdp                                  WindowsWord.lnk*
+ desktop.ini                                 'Wondershare Filmora 9'/
+ Git/                                         Zoom/
+ IT-Roles_-_Tsepkov_TochkaSborki-2017.pdf     ДНТЦ/
+ KingsoftData/                                код.txt
+ Lightshot/                                  'Мои видеозаписи'@
+ Pass.png                                    'мои рисунки'@
+ projects/                                   'Моя музыка'@
+ Resume/                                      универ/
+ Screenshot_1.png
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents
+$ cd Documents projects
+bash: cd: too many arguments
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents
+$ cd projects/
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects
+$ ls
+gl-base-camp-2020/  gl-base-camp-2021/
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects
+$ cd gl-base-camp-2020
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (new-branch1)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ touch untracked
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        untracked
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git add untracked
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   untracked
+
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git commit -m "added untracked file"
+[main 0d619fc] added untracked file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 untracked
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git reset --soft HEAD~1
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   untracked
+
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git reset HEAD untracked
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        untracked
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git checkout -b HomeWork_1
+Switched to a new branch 'HomeWork_1'
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (HomeWork_1)
+$ ls
+merge-conflict  README.md  untracked  untracked_file_Modified
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (HomeWork_1)
+$ git status
+On branch HomeWork_1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        untracked
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (HomeWork_1)
+$ git rm --cached untracked
+fatal: pathspec 'untracked' did not match any files
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (HomeWork_1)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git rm --cached untracked
+fatal: pathspec 'untracked' did not match any files
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ ls
+merge-conflict  README.md  untracked  untracked_file_Modified
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ cat untracked_file_Modified
+first file
+Hello World!
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ cat README.md
+# gl-base-camp-2020
+I love cats
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git -rm --cached untracked_file_Modified
+unknown option: -rm
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git rm --cached untracked_file_Modified
+rm 'untracked_file_Modified'
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ ls
+merge-conflict  README.md  untracked  untracked_file_Modified
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    untracked_file_Modified
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        untracked
+        untracked_file_Modified
+
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git commit --amend
+[main 53ac20b] removed untracked_file_modified
+ Date: Sun Oct 25 22:22:35 2020 +0200
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ git ls-files
+.gitignore
+README.md
+merge-conflict
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$ ls
+merge-conflict  README.md  untracked  untracked_file_Modified
+
+PROBOOK 440@DESKTOP-0PUUUB6 MINGW64 ~/Documents/projects/gl-base-camp-2020 (main)
+$
